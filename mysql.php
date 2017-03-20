@@ -2,6 +2,6 @@
 <!--
 PPSF/PSF
 
-ustawienia ³¹czenia z serwerem baz danych
+ustawienia Å‚Ä…czenia z serwerem baz danych
 
 -->

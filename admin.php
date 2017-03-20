@@ -2,6 +2,6 @@
 <!--
 PPSF
 
-sprawdza czy wywo³ywacz jest serwerem
+sprawdza czy wywoÅ‚ywacz jest serwerem
 
 -->

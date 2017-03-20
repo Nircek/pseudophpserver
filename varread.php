@@ -2,6 +2,6 @@
 <!--
 PSF
 
-odczytuje zmienn¹
+odczytuje zmiennÄ…
 
 -->

@@ -2,6 +2,6 @@
 <!--
 PSF
 
-zapisuje zmienn¹
+zapisuje zmiennÄ…
 
 -->

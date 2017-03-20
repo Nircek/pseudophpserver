@@ -2,6 +2,6 @@
 <!--
 PSF
 
-odczytuje wydarzenie z kolejki wydarzeñ
+odczytuje wydarzenie z kolejki wydarzeÅ„
 
 -->

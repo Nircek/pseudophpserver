@@ -2,6 +2,6 @@
 <!--
 PCF
 
-dodaje wydarzenie do kolejki wydarzeñ
+dodaje wydarzenie do kolejki wydarzeÅ„
 
 -->
