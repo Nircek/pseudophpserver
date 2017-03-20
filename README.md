@@ -8,9 +8,6 @@ PPSFiles	- pliki należące do PPS
 
 Pliki:
 
-PCF 		PPSF 		PSF
-push.php	admin.php	pop.php
-refresh.php	log.php		reply.php
-dotoken.php	mysql.php	gettoken.php
-						varread.php
-						varwrite.php
+PCF: { push.php refresh.php dotoken.php}
+PPSF: { admin.php log.php mysql.php  }
+PSF: { pop.php reply.php gettoken.php varread.php varwrite.php}
