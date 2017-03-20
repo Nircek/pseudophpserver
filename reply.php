@@ -2,4 +2,6 @@
 <!--
 PSF
 
+odpowiada do klienta
+
 -->

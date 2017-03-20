@@ -2,4 +2,6 @@
 <!--
 PPSF/PSF
 
+zapisuje info w logu
+
 -->

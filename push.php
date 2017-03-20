@@ -2,4 +2,6 @@
 <!--
 PCF
 
+dodaje wydarzenie do kolejki wydarzeñ
+
 -->

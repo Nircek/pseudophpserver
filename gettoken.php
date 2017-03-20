@@ -2,4 +2,6 @@
 <!--
 PSF
 
+pobiera info o tokenie
+
 -->

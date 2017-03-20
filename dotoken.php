@@ -2,4 +2,6 @@
 <!--
 PCF
 
+tworzy nowy token
+
 -->

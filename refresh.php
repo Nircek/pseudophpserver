@@ -2,4 +2,6 @@
 <!--
 PCF
 
+sprawdza info od serwera
+
 -->

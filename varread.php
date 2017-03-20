@@ -2,4 +2,6 @@
 <!--
 PSF
 
+odczytuje zmienn¹
+
 -->

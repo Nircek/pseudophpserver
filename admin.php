@@ -2,4 +2,6 @@
 <!--
 PPSF
 
+sprawdza czy wywo³ywacz jest serwerem
+
 -->
