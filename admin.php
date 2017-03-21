@@ -7,5 +7,8 @@ sprawdza czy wywoływacz jest serwerem
 
 */
 
-if(!(isset($_GET['server'])&&($_GET['server']==="super tajne hasło")))exit;
+if(!(isset($_GET['server'])&&($_GET['server']==="super tajne hasło"))){
+	echo -418296719726;
+	exit;
+}
 ?>
