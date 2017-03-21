@@ -23,6 +23,7 @@ if(!$result){
 }
 if(($result->num_rows)>0){
 	$r=$result->fetch_assoc();
+	$user=$r['user'];
 	$r=$r['name'];
 	$result=$connection->query("DELETE FROM `psqueue` ORDER BY `id` LIMIT 1 ");
 	if(!$result){
@@ -37,6 +38,8 @@ if(($result->num_rows)>0){
 }
 $connection->close();
 echo 0;
+echo $user;
+echo "";
 echo $r;
 exit;
 

@@ -11,6 +11,7 @@ if(!isset($_GET['event'])){
 	exit;
 }
 require_once "mysql.php";
+require_once "login.php";
 $connection = @new mysqli($db_host,$db_user,$db_pass,$db_table);
 if($connection->connect_errno!=0){
 	echo "+";
@@ -18,8 +19,12 @@ if($connection->connect_errno!=0){
 	exit;
 }
 $connection->set_charset("utf8");
-$result = $connection->query("INSERT INTO `psqueue`(`id`,`name`) VALUES ('','".$_GET['event']."')");
-if($result){
+$result = $connection->query(sprintf(
+"INSERT INTO `psqueue`(`id`,`user`,`name`) VALUES ('','%s','%s')",
+mysqli_real_escape_string($connection,$_GET['user']),
+mysqli_real_escape_string($connection,$_GET['event'])
+));
+if(!$result){
 	echo "+";
 	echo $connection->connect_errno;
 	exit;
