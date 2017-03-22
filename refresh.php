@@ -6,6 +6,9 @@ PCF
 sprawdza info od serwera
 
 */
+$flog=true;
+require_once "log.php";
+flog("refresh.php started");
 require_once "login.php";
 require_once "mysql.php";
 $connection = @new mysqli($db_host,$db_user,$db_pass,$db_table);
@@ -29,4 +32,5 @@ if(($result->num_rows)<1){
 }
 echo 0;
 echo $result->fetch_assoc()['text'];
+flog("refresh.php stopped");
 ?>

@@ -6,6 +6,9 @@ PCF
 dodaje wydarzenie do kolejki wydarzeń
 
 */
+$flog=true;
+require_once "log.php";
+flog("push.php started");
 if(!isset($_GET['event'])){
 	echo -1;
 	exit;
@@ -32,5 +35,6 @@ if(!$result){
 
 $connection->close();
 echo 0;
+flog("push.php stopped");
 exit;
 ?>

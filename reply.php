@@ -6,6 +6,9 @@ PSF
 odpowiada do klienta
 
 */
+$flog=true;
+require_once "log.php";
+flog("reply.php started");
 if(!isset($_GET['text'],$_GET['user'])){
 	echo -1;
 	exit;
@@ -55,6 +58,7 @@ if(!$result){
 
 $connection->close();
 echo 0;
+flog("reply.php stopped");
 exit;
 
 

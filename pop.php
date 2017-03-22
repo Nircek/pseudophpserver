@@ -6,6 +6,9 @@ PSF
 odczytuje wydarzenie z kolejki wydarzeń
 
 */
+$flog=true;
+require_once "log.php";
+flog("pop.php started");
 require "admin.php";
 require_once "mysql.php";
 $connection = @new mysqli($db_host,$db_user,$db_pass,$db_table);
@@ -41,6 +44,7 @@ echo 0;
 echo $user;
 echo "";
 echo $r;
+flog("pop.php stopped");
 exit;
 
 ?>

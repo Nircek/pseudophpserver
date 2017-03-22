@@ -6,7 +6,8 @@ PPSF
 sprawdza, czy dane podane przez użytkownika są prawidłowe
 
 */
-
+$flog=true;
+require_once "log.php";
 if(!isset($_GET['user'],$_GET['pass'])){
 	echo -2;
 	exit;
@@ -24,7 +25,9 @@ mysqli_real_escape_string($connection,$_GET['user']),
 mysqli_real_escape_string($connection,$_GET['pass'])));
 if($result->num_rows===0){
 	echo -2;
+	flog("User denied");
 	exit;
 }
 $connection->close();
+flog("User granted");
 ?>
