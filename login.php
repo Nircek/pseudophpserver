@@ -15,7 +15,7 @@ require_once "mysql.php";
 $connection = @new mysqli($db_host,$db_user,$db_pass,$db_table);
 if($connection->connect_errno!=0){
 	echo "+";
-	echo $connection->connect_errno;
+	echo $connection->connect_errno."".$connection->connect_error;
 	exit;
 }
 $connection->set_charset("utf8");

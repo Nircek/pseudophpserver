@@ -15,7 +15,7 @@ require_once "login.php";
 $connection = @new mysqli($db_host,$db_user,$db_pass,$db_table);
 if($connection->connect_errno!=0){
 	echo "+";
-	echo $connection->connect_errno;
+	echo $connection->connect_errno."".$connection->connect_error;
 	exit;
 }
 $connection->set_charset("utf8");
@@ -26,7 +26,7 @@ mysqli_real_escape_string($connection,$_GET['event'])
 ));
 if(!$result){
 	echo "+";
-	echo $connection->connect_errno;
+	echo $connection->errno."".$connection->error;
 	exit;
 }
 
