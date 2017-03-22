@@ -15,6 +15,7 @@ $connection = @new mysqli($db_host,$db_user,$db_pass,$db_table);
 if($connection->connect_errno!=0){
 	echo "+";
 	echo $connection->connect_errno."".$connection->connect_error;
+	flog("ERR: ".$connection->connect_error.'('.$connection->connect_errno.')');
 	exit;
 }
 $connection->set_charset("utf8");
@@ -22,6 +23,7 @@ $result=$connection->query("SELECT * FROM `psqueue` ORDER BY `id` LIMIT 1");
 if(!$result){
 	echo "+";
 	echo $connection->errno."".$connection->error;
+	flog("ERR: ".$connection->error.'('.$connection->errno.')');
 	exit;
 }
 if(($result->num_rows)>0){
@@ -32,11 +34,13 @@ if(($result->num_rows)>0){
 	if(!$result){
 		echo "+";
 		echo $connection->errno."".$connection->error;
+		flog("ERR: ".$connection->error.'('.$connection->errno.')');
 		exit;
 	}
 }else{
 	echo -1;
 	$connection->close();
+	flog("WARN: -1(empty PSQueue)");
 	exit;
 }
 $connection->close();

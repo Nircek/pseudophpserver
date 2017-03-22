@@ -23,6 +23,7 @@ if((!isset($flog))||($flog!==true)){
 	flog('log.php started');
 	if(!isset($_GET['log'])){
 		echo -1;
+		flog("ERR: -1");
 		exit;
 	}
 	require_once "admin.php";
