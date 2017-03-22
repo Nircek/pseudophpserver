@@ -10,6 +10,6 @@
 <br/>
 <br/>Pliki:
 <br/>
-<br/>PCF: { push.php refresh.php dotoken.php}
+<br/>PCF: { push.php refresh.php}
 <br/>PPSF: { admin.php log.php mysql.php login.php}
-<br/>PSF: { pop.php reply.php gettoken.php varread.php varwrite.php}
+<br/>PSF: { pop.php reply.php varread.php varwrite.php}
