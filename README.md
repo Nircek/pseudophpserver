@@ -1,16 +1,15 @@
-PseudoPHPServer
+<meta charset="UTF-8">
 
-Oprogramowanie służące do przesyłania, identyfikowania i autoryzowania informacji przesyłanych między PC (PseudoClient), a PS(PseudoServer).
-Pliki w PPS dzielimy na 3 grupy:
-PCFiles		- pliki należące do PC
-PSFiles		- pliki należące do PS
-PPSFiles	- pliki należące do PPS
-
-Pliki:
-
-PCF 		PPSF 		PSF
-push.php	admin.php	pop.php
-refresh.php	log.php		reply.php
-dotoken.php	mysql.php	gettoken.php
-						varread.php
-						varwrite.php
+<br/><b>PseudoPHPServer</b>
+<br/>
+<br/>Oprogramowanie służące do przesyłania, identyfikowania i autoryzowania informacji przesyłanych między PC (PseudoClient), a PS(PseudoServer).
+<br/>Pliki w PPS dzielimy na 3 grupy:
+<br/>PCFiles - pliki należące do PC
+<br/>PSFiles - pliki należące do PS
+<br/>PPSFiles - pliki należące do PPS
+<br/>
+<br/>Pliki:
+<br/>
+<br/>PCF: { push.php refresh.php}
+<br/>PPSF: { admin.php log.php mysql.php login.php}
+<br/>PSF: { pop.php reply.php varread.php varwrite.php}
