@@ -29,5 +29,7 @@ if((!isset($flog))||($flog!==true)){
 	require_once "admin.php";
 	flog($_GET['log']);
 	flog('log.php stopped');
+	echo 0;
+	exit;
 }
 ?>
