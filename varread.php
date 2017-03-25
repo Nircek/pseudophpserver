@@ -35,9 +35,9 @@ if(!$result){
 	exit;
 }
 if(($result->num_rows)<1){
-	echo -1;
+	echo -5;
 	$connection->close();
-	flog("ERR: -1");
+	flog("ERR: -5");
 	exit;
 }
 echo 0;

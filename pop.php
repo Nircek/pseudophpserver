@@ -38,9 +38,9 @@ if(($result->num_rows)>0){
 		exit;
 	}
 }else{
-	echo -1;
+	echo -5;
 	$connection->close();
-	flog("WARN: -1(empty PSQueue)");
+	flog("ERR: -5");
 	exit;
 }
 $connection->close();
