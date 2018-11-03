@@ -1,5 +1,5 @@
 <?php
-//# login.php #
+//# login.php # (user=login, pass=pass)
 /*
 PPSF
 

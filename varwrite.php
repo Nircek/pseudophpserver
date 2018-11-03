@@ -1,5 +1,5 @@
 <?php
-//# varwrite.php #
+//# varwrite.php # (name=var, user=user, value=value) + admin
 /*
 PSF
 

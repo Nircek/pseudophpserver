@@ -1,5 +1,5 @@
 <?php
-//# register.php #
+//# register.php # (user=login, pass=pass)
 /*
 PCF
 

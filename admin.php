@@ -1,5 +1,5 @@
 <?php
-//# admin.php #
+//# admin.php # (server=pass)
 /*
 PPSF
 

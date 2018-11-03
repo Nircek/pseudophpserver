@@ -1,5 +1,5 @@
 <?php
-//# log.php #
+//# log.php # (log=msg) + admin
 /*
 PPSF/PSF
 

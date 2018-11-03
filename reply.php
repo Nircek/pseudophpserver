@@ -1,5 +1,5 @@
 <?php
-//# reply.php #
+//# reply.php # (text=text, user=user) + admin
 /*
 PSF
 

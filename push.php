@@ -1,5 +1,5 @@
 <?php
-//# push.php #
+//# push.php # (event=element) + login
 /*
 PCF
 

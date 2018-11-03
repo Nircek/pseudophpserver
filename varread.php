@@ -1,5 +1,5 @@
 <?php
-//# varread.php #
+//# varread.php # (name=var, user=user) + admin
 /*
 PSF
 
