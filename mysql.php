@@ -1,7 +1,7 @@
 <?php
 //# mysql.php #
 /*
-PPSF/PSF
+PPSF
 
 settings for database server connection
 
