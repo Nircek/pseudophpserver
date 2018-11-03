@@ -3,7 +3,7 @@
 /*
 PCF
 
-rejestracja nowego użytkownika
+register new user
 
 */
 $flog=true;

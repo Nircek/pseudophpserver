@@ -3,7 +3,7 @@
 /*
 PSF
 
-odczytuje wydarzenie z kolejki wydarzeń
+pop event from event queue
 
 */
 $flog=true;

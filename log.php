@@ -3,7 +3,7 @@
 /*
 PPSF/PSF
 
-zapisuje info w logu
+save info in log
 
 */
 function flog($log){

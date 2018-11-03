@@ -3,7 +3,7 @@
 /*
 PSF
 
-odczytuje zmienną
+read var
 
 */
 $flog=true;

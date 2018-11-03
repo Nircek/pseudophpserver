@@ -3,7 +3,7 @@
 /*
 PSF
 
-odpowiada do klienta
+reply to client
 
 */
 $flog=true;

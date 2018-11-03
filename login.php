@@ -3,7 +3,7 @@
 /*
 PPSF
 
-sprawdza, czy dane podane przez użytkownika są prawidłowe
+check if user's login data is correct
 
 */
 $flog=true;

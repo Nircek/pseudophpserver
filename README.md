@@ -1,9 +1,6 @@
-<meta charset="UTF-8">
-
-<br/><b>PseudoPHPServer</b>
-<br/>
-<br/>Oprogramowanie służące do przesyłania, identyfikowania i autoryzowania informacji przesyłanych między PC (PseudoClient), a PS(PseudoServer).
-<br/>Pliki w PPS dzielimy na 3 grupy:
-<br/>PCFiles - pliki należące do PC
-<br/>PSFiles - pliki należące do PS
-<br/>PPSFiles - pliki należące do PPS
+# PseudoPHPServer
+Software for sending, identifying, authorizing data sending between PC (PseudoClient) and PS (PseudoServer).
+We split PPS files into 3 groups:
+- PCFiles - files used by PC
+- PSFiles - files used by PS
+- PPSFiles - files used by PPS

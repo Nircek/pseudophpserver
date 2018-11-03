@@ -3,13 +3,13 @@
 /*
 PPSF
 
-sprawdza czy wywoływacz jest serwerem
+check if caller is the server
 
 */
 $flog=true;
 require_once "log.php";
 
-if(!(isset($_GET['server'])&&($_GET['server']==="super tajne hasło"))){
+if(!(isset($_GET['server'])&&($_GET['server']==="super secret password"))){
 	echo -3;
 	flog("ERR: Admin denied");
 	exit;

@@ -3,7 +3,7 @@
 /*
 PSF
 
-zapisuje zmienną
+set var
 
 */
 $flog=true;

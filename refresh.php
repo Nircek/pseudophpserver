@@ -3,7 +3,7 @@
 /*
 PCF
 
-sprawdza info od serwera
+refresh data from server
 
 */
 $flog=true;

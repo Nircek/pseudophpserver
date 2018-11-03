@@ -3,7 +3,7 @@
 /*
 PCF
 
-dodaje wydarzenie do kolejki wydarzeń
+push event to event queue
 
 */
 $flog=true;

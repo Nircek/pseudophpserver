@@ -3,7 +3,7 @@
 /*
 PPSF/PSF
 
-ustawienia łączenia z serwerem baz danych
+settings for database server connection
 
 */
 
