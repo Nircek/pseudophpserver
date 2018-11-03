@@ -3,7 +3,7 @@
 /*
 PPSF
 
-settings for database server connection
+settings for database connection
 
 */
 
