@@ -7,7 +7,6 @@ settings for database connection
 
 */
 
-require 'data.php';
 class DBC {
   //src: https://stackoverflow.com/a/16913680
   private static $instance;
@@ -15,6 +14,7 @@ class DBC {
     $cond = !self::$instance;
     if(!$cond)$cond = !(@self::$instance->ping());
     if($cond) {
+      require_once 'data.php';
       global $db_host,$db_user,$db_pass,$db_table;
       self::$instance = @new mysqli($db_host,$db_user,$db_pass,$db_table);
       if(self::$instance->connect_errno!=0) {
@@ -25,7 +25,7 @@ class DBC {
       }
       self::$instance->set_charset("utf8");
     }
-    self::query('CREATE TABLE IF NOT EXISTS psqueue ( id MEDIUMINT NOT NULL AUTO_INCREMENT, name TEXT NOT NULL, user TEXT NOT NULL, PRIMARY KEY (id) ); CREATE TABLE IF NOT EXISTS users ( user TEXT NOT NULL, pass TEXT NOT NULL );');
+    //CREATE TABLE IF NOT EXISTS psqueue ( id MEDIUMINT NOT NULL AUTO_INCREMENT, name TEXT NOT NULL, user TEXT NOT NULL, PRIMARY KEY (id) ); CREATE TABLE IF NOT EXISTS users ( user TEXT NOT NULL, pass TEXT NOT NULL );
     return self::$instance;
   }
   public static function query($s) {
