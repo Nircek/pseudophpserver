@@ -7,6 +7,7 @@ settings for database connection
 
 */
 
+require 'data.php';
 class DBC {
   //src: https://stackoverflow.com/a/16913680
   private static $instance;
@@ -14,10 +15,7 @@ class DBC {
     $cond = !self::$instance;
     if(!$cond)$cond = !(@self::$instance->ping());
     if($cond) {
-      $db_host="localhost";
-      $db_user="root";
-      $db_pass="";
-      $db_table="pps";
+      global $db_host,$db_user,$db_pass,$db_table;
       self::$instance = @new mysqli($db_host,$db_user,$db_pass,$db_table);
       if(self::$instance->connect_errno!=0) {
 	      echo "+";
@@ -29,16 +27,16 @@ class DBC {
     }
     return self::$instance;
   }
-  public static function query(s) {
-    $result=self::get()->query(s);
-	  if(!$result){
-		  echo "+";
-		  echo DBC::get()->errno."\xB2".DBC::get()->error;
-		  flog("ERR: ".DBC::get()->error.'('.DBC::get()->errno.')');
-		  exit;
-	  }
+  public static function query($s) {
+    $result=self::get()->query($s);
+    if(!$result){
+	    echo "+";
+	    echo DBC::get()->errno."\xB2".DBC::get()->error;
+	    flog("ERR: ".DBC::get()->error.'('.DBC::get()->errno.')');
+	    exit;
+    }
   }
-  function static __destruct() {
+  function __destruct() {
     self::$instance->close();
   }
 }
