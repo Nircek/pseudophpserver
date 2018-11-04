@@ -1,20 +1,20 @@
 <?php
-//# refresh.php # () + login
-/*
-PCF
-
-refresh data from server
-
-*/
-$flog=true;
+/*-------------------------------------
+  Name:   refresh.php
+  Type:   PCF
+  Params: --
+  Auth:   login
+  Desc:   refresh data from server
+-------------------------------------*/
 require_once "log.php";
 flog("refresh.php started");
 require_once "login.php";
 require_once "mysql.php";
-$result=DBC::query(sprintf("SELECT * FROM `pcqueue` WHERE `user`='%s'",
-mysqli_real_escape_string(DBC::get(),$_GET['user'])));
-
-if(($result->num_rows)<1){
+$result = DBC::query(sprintf(
+    "SELECT * FROM `pcqueue` WHERE `user`='%s'",
+    mysqli_real_escape_string(DBC::get(),$_GET['user'])
+));
+if(($result->num_rows)<1) {
 	echo -5;
 	flog("ERR: -5");
 	exit;

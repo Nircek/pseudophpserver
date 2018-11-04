@@ -1,12 +1,11 @@
 <?php
-//# mysql.php #
-/*
-PPSF
-
-settings for database connection
-
-*/
-
+/*-------------------------------------
+  Name:   mysql.php
+  Type:   PPSF
+  Params: --
+  Auth:   --
+  Desc:   functions for database connection
+-------------------------------------*/
 class DBC {
   //src: https://stackoverflow.com/a/16913680
   private static $instance;
@@ -30,7 +29,7 @@ class DBC {
   }
   public static function query($s) {
     $result=self::get()->query($s);
-    if(!$result){
+    if(!$result) {
 	    echo "+";
 	    echo DBC::get()->errno."\xB2".DBC::get()->error;
 	    flog("ERR: ".DBC::get()->error.'('.DBC::get()->errno.')');

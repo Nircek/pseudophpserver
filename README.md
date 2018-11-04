@@ -10,7 +10,8 @@ We split PPS files into 3 groups:
 |PPSF   |admin          |server=pass                     |     |check if caller is the server        |
 |PPSF   |log            |                                |     |save info in log                     |
 |PPSF   |login          |user=login, pass=pass           |     |check if user's login data is correct|
-|PPSF   |mysql          |                                |     |settings for database connection     |
+|PPSF   |mysql          |                                |     |functions for database connection    |
+|PPSF   |data           |                                |     |settings for database connection     |
 |PSF    |log            |log=msg                         |admin|save info in log                     |
 |PSF    |pop            |                                |admin|pop event from event queue           |
 |PSF    |reply          |text=text, user=user            |admin|reply to client                      |
