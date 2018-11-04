@@ -19,7 +19,7 @@ require_once "mysql.php";
 DBC::get() = @new mysqli($db_host,$db_user,$db_pass,$db_table);
 if(DBC::get()->connect_errno!=0){
 	echo "+";
-	echo DBC::get()->connect_errno."\x12".DBC::get()->connect_error;
+	echo DBC::get()->connect_errno."\xB2".DBC::get()->connect_error;
 	flog("ERR: ".DBC::get()->connect_error.'('.DBC::get()->connect_errno.')');
 	exit;
 }
@@ -29,7 +29,7 @@ $result=DBC::get()->query(sprintf("SELECT * FROM pcqueue WHERE `user`='%s'",
 mysqli_real_escape_string(DBC::get(),$_GET['user'])));
 if(!$result){
 	echo "+";
-	echo DBC::get()->errno."\x12".DBC::get()->error;
+	echo DBC::get()->errno."\xB2".DBC::get()->error;
 	flog("ERR: ".DBC::get()->error.'('.DBC::get()->errno.')');
 	exit;
 }
@@ -39,7 +39,7 @@ if($result->num_rows>0){
 		mysqli_real_escape_string(DBC::get(),$_GET['user'])));
 	if(!$result){
 	echo "+";
-	echo DBC::get()->errno."\x12".DBC::get()->error;
+	echo DBC::get()->errno."\xB2".DBC::get()->error;
 	flog("ERR: ".DBC::get()->error.'('.DBC::get()->errno.')');
 	exit;
 	}
@@ -50,14 +50,14 @@ if($result->num_rows>0){
 	));
 	if(!$result){
 	echo "+";
-	echo DBC::get()->errno."\x12".DBC::get()->error;
+	echo DBC::get()->errno."\xB2".DBC::get()->error;
 	flog("ERR: ".DBC::get()->error.'('.DBC::get()->errno.')');
 	exit;
 }
 }
 if(!$result){
 	echo "+";
-	echo DBC::get()->errno."\x12".DBC::get()->error;
+	echo DBC::get()->errno."\xB2".DBC::get()->error;
 	flog("ERR: ".DBC::get()->error.'('.DBC::get()->errno.')');
 	exit;
 }

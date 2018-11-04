@@ -23,7 +23,7 @@ mysqli_real_escape_string(DBC::get(),$_GET['event'])
 ));
 if(!$result) {
 	echo "+";
-	echo DBC::get()->errno."\x12".DBC::get()->error;
+	echo DBC::get()->errno."\xB2".DBC::get()->error;
 	flog("ERR: ".DBC::get()->error.'('.DBC::get()->errno.')');
 	exit;
 }

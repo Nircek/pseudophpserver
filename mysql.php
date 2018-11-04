@@ -21,7 +21,7 @@ class DBC {
       self::$instance = @new mysqli($db_host,$db_user,$db_pass,$db_table);
       if(self::$instance->connect_errno!=0) {
 	      echo "+";
-	      echo self::$instance->connect_errno."\x12".self::$instance->connect_error;
+	      echo self::$instance->connect_errno."\xB2".self::$instance->connect_error;
 	      flog("ERR: ".self::$instance->connect_error.'('.self::$instance->connect_errno.')');
 	      exit;
       }
