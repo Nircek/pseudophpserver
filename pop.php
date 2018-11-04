@@ -11,24 +11,12 @@ require_once "log.php";
 flog("pop.php started");
 require "admin.php";
 require_once "mysql.php";
-$result=DBC::get()->query("SELECT * FROM `psqueue` ORDER BY `id` LIMIT 1");
-if(!$result){
-	echo "+";
-	echo DBC::get()->errno."\x12".DBC::get()->error;
-	flog("ERR: ".DBC::get()->error.'('.DBC::get()->errno.')');
-	exit;
-}
+$result=DBC::query("SELECT * FROM `psqueue` ORDER BY `id` LIMIT 1");
 if(($result->num_rows)>0){
 	$r=$result->fetch_assoc();
 	$user=$r['user'];
 	$r=$r['name'];
-	$result=DBC::get()->query("DELETE FROM `psqueue` ORDER BY `id` LIMIT 1 ");
-	if(!$result){
-		echo "+";
-		echo DBC::get()->errno."\x12".DBC::get()->error;
-		flog("ERR: ".DBC::get()->error.'('.DBC::get()->errno.')');
-		exit;
-	}
+	$result=DBC::query("DELETE FROM `psqueue` ORDER BY `id` LIMIT 1 ");
 }else{
 	echo -5;
 	flog("ERR: -5");
@@ -36,7 +24,7 @@ if(($result->num_rows)>0){
 }
 echo 0;
 echo $user;
-echo "\x12";
+echo "\xB2";
 echo $r;
 flog("pop.php stopped");
 exit;

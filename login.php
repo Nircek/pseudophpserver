@@ -14,7 +14,7 @@ if(!isset($_GET['user'],$_GET['pass'])){
 	exit;
 }
 require_once "mysql.php";
-$result=DBC::get()->query(sprintf("SELECT * FROM `users` WHERE `user`='%s' AND `pass`='%s'",
+$result=DBC::query(sprintf("SELECT * FROM `users` WHERE `user`='%s' AND `pass`='%s'",
 mysqli_real_escape_string(DBC::get(),$_GET['user']),
 mysqli_real_escape_string(DBC::get(),$_GET['pass'])));
 if($result->num_rows===0){
