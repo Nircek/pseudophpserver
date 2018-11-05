@@ -30,7 +30,6 @@ SOFTWARE.
   Desc:   register new user
 -------------------------------------*/
 require_once "log.php";
-flog("register.php started");
 if(!isset($_GET['user'],$_GET['pass']))
     got(-1);
 require_once "mysql.php";

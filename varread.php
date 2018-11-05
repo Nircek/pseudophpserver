@@ -30,7 +30,6 @@ SOFTWARE.
   Desc:   read var
 -------------------------------------*/
 require_once "log.php";
-flog("varread.php started");
 if(!isset($_GET['name'],$_GET['user']))
     got(-1);
 require "admin.php";

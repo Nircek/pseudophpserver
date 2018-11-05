@@ -29,6 +29,7 @@ SOFTWARE.
   Auth:   --
   Desc:   functions for database connection
 -------------------------------------*/
+require_once 'log.php';
 class DBC {
   //src: https://stackoverflow.com/a/16913680
   private static $instance;

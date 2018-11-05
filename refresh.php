@@ -30,7 +30,6 @@ SOFTWARE.
   Desc:   refresh data from server
 -------------------------------------*/
 require_once "log.php";
-flog("refresh.php started");
 require_once "login.php";
 require_once "mysql.php";
 $result = DBC::query(sprintf(

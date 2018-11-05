@@ -30,7 +30,6 @@ SOFTWARE.
   Desc:   reply to client
 -------------------------------------*/
 require_once "log.php";
-flog("reply.php started");
 if(!isset($_GET['text'],$_GET['user']))
     got(-1);
 require "admin.php";

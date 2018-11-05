@@ -35,6 +35,7 @@ function flog($log) {
 	fputs($fp,date("[d-m-Y H:i:s]: ").$log.$endl) or got(-4,'','',false);
 	fclose($fp);
 }
+flog(basename($_SERVER["SCRIPT_FILENAME"]).' started');
 function got($type='?', $code='', $desc='', $log=true) {
     if($type<0) {
         $f = $type;
@@ -63,7 +64,6 @@ function got($type='?', $code='', $desc='', $log=true) {
 }
 //src: https://stackoverflow.com/a/12999758
 if(basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"])) {
-	flog('log.php started');
 	if(!isset($_GET['log']))
 	    got(-1);
 	require_once "admin.php";

@@ -30,7 +30,6 @@ SOFTWARE.
   Desc:   pop event from event queue
 -------------------------------------*/
 require_once "log.php";
-flog("pop.php started");
 require "admin.php";
 require_once "mysql.php";
 $result = DBC::query("SELECT * FROM `psqueue` ORDER BY `id` LIMIT 1");
