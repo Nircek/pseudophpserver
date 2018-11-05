@@ -54,13 +54,14 @@ class DBC {
     return self::$instance;
   }
   public static function query($s) {
-    $result=self::get()->query($s);
+    $result = self::get()->query($s);
     if(!$result) {
 	    echo "+";
 	    echo DBC::get()->errno."\xB2".DBC::get()->error;
 	    flog("ERR: ".DBC::get()->error.'('.DBC::get()->errno.')');
 	    exit;
     }
+    return $result;
   }
   function __destruct() {
     self::$instance->close();
