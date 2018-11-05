@@ -36,8 +36,7 @@ class DBC {
     $cond = !self::$instance;
     if(!$cond)$cond = !(@self::$instance->ping());
     if($cond) {
-      require_once 'data.php';
-      global $db_host,$db_user,$db_pass,$db_table;
+      require 'data.php';
       self::$instance = @new mysqli($db_host,$db_user,$db_pass,$db_table);
       if(self::$instance->connect_errno!=0) {
 	      echo "+";
