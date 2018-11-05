@@ -41,6 +41,24 @@ function flog($log) {
 	}
 	fclose($fp);
 }
+function got($type='?', $code='', $desc='') {
+    $f = $type;
+    $f .= $code;
+    if($desc)
+        $f .= "\xB2".$desc;
+    echo $f."\r\n";
+    if($type=='0')
+        $f = 'OK['.basename($_SERVER["SCRIPT_FILENAME"]).']';
+    else {
+    $f = 'ERR['.basename($_SERVER["SCRIPT_FILENAME"]).']: ';
+    if($desc)
+        $f .= $desc.' ('.$code.').';
+    else
+        $f .= $type.$code;
+    }
+    flog($f);
+    exit;
+}
 //src: https://stackoverflow.com/a/12999758
 if(basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"])) {
 	flog('log.php started');
