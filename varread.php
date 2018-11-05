@@ -32,7 +32,7 @@ SOFTWARE.
 require_once "log.php";
 flog("varread.php started");
 if(!isset($_GET['name'],$_GET['user']))
-    got('-', 1);
+    got(-1);
 require "admin.php";
 require_once "mysql.php";
 $result = DBC::query(sprintf(
@@ -41,6 +41,6 @@ $result = DBC::query(sprintf(
     mysqli_real_escape_string(DBC::get(),$_GET['name'])
 ));
 if(($result->num_rows)<1)
-    got('-', 5);
+    got(-5);
 got(0, $result->fetch_assoc()['value']);
 ?>

@@ -31,7 +31,7 @@ SOFTWARE.
 -------------------------------------*/
 require_once "log.php";
 if(!isset($_GET['user'],$_GET['pass']))
-    got('-', 2, 'User denied');
+    got(-2, 'User denied');
 require_once "mysql.php";
 $result = DBC::query(sprintf(
     "SELECT * FROM `users` WHERE `user`='%s' AND `pass`='%s'",
@@ -39,6 +39,6 @@ $result = DBC::query(sprintf(
     mysqli_real_escape_string(DBC::get(),$_GET['pass'])
 ));
 if($result->num_rows==0)
-	got('-', 2, 'User denied');
+	got(-2, 'User denied');
 flog("User granted");
 ?>

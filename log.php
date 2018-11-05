@@ -31,15 +31,19 @@ SOFTWARE.
 -------------------------------------*/
 function flog($log) {
 	$endl="\r\n";
-	$fp = fopen('log.txt','a') or got('-',4,'',false);
-	fputs($fp,date("[d-m-Y H:i:s]: ").$log.$endl) or got('-',4,'',false);
+	$fp = fopen('log.txt','a') or got(-4,'','',false);
+	fputs($fp,date("[d-m-Y H:i:s]: ").$log.$endl) or got(-4,'','',false);
 	fclose($fp);
 }
 function got($type='?', $code='', $desc='', $log=true) {
-    $f = $type;
-    $f .= $code;
-    if($desc)
-        $f .= "\xB2".$desc;
+    if($type<0) {
+        $f = $type;
+    } else {
+        $f = $type;
+        $f .= $code;
+        if($desc)
+            $f .= "\xB2".$desc;
+    }
     echo $f."\r\n";
     if(!$log)
         exit;
@@ -49,6 +53,8 @@ function got($type='?', $code='', $desc='', $log=true) {
     $f = 'ERR['.basename($_SERVER["SCRIPT_FILENAME"]).']: ';
     if($desc)
         $f .= $desc.' ('.$code.').';
+    else if($type<0 && $code)
+        $f .= $code.' ('.$type.').';
     else
         $f .= $type.$code;
     }
@@ -59,7 +65,7 @@ function got($type='?', $code='', $desc='', $log=true) {
 if(basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"])) {
 	flog('log.php started');
 	if(!isset($_GET['log']))
-	    got('-',1);
+	    got(-1);
 	require_once "admin.php";
 	flog($_GET['log']);
 	got(0);

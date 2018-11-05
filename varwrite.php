@@ -32,7 +32,7 @@ SOFTWARE.
 require_once "log.php";
 flog("varwrite.php started");
 if(!isset($_GET['name'],$_GET['user'],$_GET['value']))
-    got('-', 1);
+    got(-1);
 require "admin.php";
 require_once "mysql.php";
 $result = DBC::query(sprintf(

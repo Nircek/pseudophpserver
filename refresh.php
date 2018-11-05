@@ -38,6 +38,6 @@ $result = DBC::query(sprintf(
     mysqli_real_escape_string(DBC::get(),$_GET['user'])
 ));
 if(($result->num_rows)<1)
-    got('-',5);
+    got(-5);
 got(0, $result->fetch_assoc()['text']);
 ?>

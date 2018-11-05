@@ -32,6 +32,6 @@ SOFTWARE.
 require_once "log.php";
 require 'data.php';
 if(!(isset($_GET['server'])&&($_GET['server']===$token)))
-	got('-','3','Admin denied');
+	got('-3','Admin denied');
 flog("Admin granted");
 ?>

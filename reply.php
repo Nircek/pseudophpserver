@@ -32,7 +32,7 @@ SOFTWARE.
 require_once "log.php";
 flog("reply.php started");
 if(!isset($_GET['text'],$_GET['user']))
-    got('-', 1);
+    got(-1);
 require "admin.php";
 require_once "mysql.php";
 $result = DBC::query(sprintf(

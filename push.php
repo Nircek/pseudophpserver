@@ -32,7 +32,7 @@ SOFTWARE.
 require_once "log.php";
 flog("push.php started");
 if(!isset($_GET['event']))
-    got('-', 1);
+    got(-1);
 require_once "mysql.php";
 require_once "login.php";
 DBC::query(sprintf(
