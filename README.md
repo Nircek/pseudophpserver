@@ -47,4 +47,4 @@ Error type specifies a PPS error. Request of this type provides in parameters co
 | 5    | No elements in the queue             |
 | 6    | A user with the same login exists    |
 
-There can be a parameter after first char of reply. Ending of this parameter can be spotted by end of reply or separator char. Separator char is a '\xB2' char which is a byte with 0xB2 or 178 value. After separator char, there can be next parameter.
+There can be a parameter after first char of reply. Ending of this parameter can be spotted by end of reply or separator char. Separator char is a `\xB2` char which is a byte with 0xB2 or 178 value. After separator char, there can be next parameter.
