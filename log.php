@@ -31,22 +31,18 @@ SOFTWARE.
 -------------------------------------*/
 function flog($log) {
 	$endl="\r\n";
-	if(!$fp = fopen('log.txt','a')) {
-		echo -4;
-		exit;
-	}
-	if(!fputs($fp,date("[d-m-Y H:i:s]: ").$log.$endl)) {
-		echo -4;
-		exit;
-	}
+	$fp = fopen('log.txt','a') or got('-',4,'',false);
+	fputs($fp,date("[d-m-Y H:i:s]: ").$log.$endl) or got('-',4,'',false);
 	fclose($fp);
 }
-function got($type='?', $code='', $desc='') {
+function got($type='?', $code='', $desc='', $log=true) {
     $f = $type;
     $f .= $code;
     if($desc)
         $f .= "\xB2".$desc;
     echo $f."\r\n";
+    if(!$log)
+        exit;
     if($type=='0')
         $f = 'OK['.basename($_SERVER["SCRIPT_FILENAME"]).']';
     else {
@@ -62,15 +58,10 @@ function got($type='?', $code='', $desc='') {
 //src: https://stackoverflow.com/a/12999758
 if(basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"])) {
 	flog('log.php started');
-	if(!isset($_GET['log'])) {
-		echo -1;
-		flog("ERR: -1");
-		exit;
-	}
+	if(!isset($_GET['log']))
+	    got('-',1);
 	require_once "admin.php";
 	flog($_GET['log']);
-	flog('log.php stopped');
-	echo 0;
-	exit;
+	got(0);
 }
 ?>

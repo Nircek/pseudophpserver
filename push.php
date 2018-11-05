@@ -31,19 +31,14 @@ SOFTWARE.
 -------------------------------------*/
 require_once "log.php";
 flog("push.php started");
-if(!isset($_GET['event'])) {
-	echo -1;
-	flog("ERR: -1");
-	exit;
-}
+if(!isset($_GET['event']))
+    got('-', 1);
 require_once "mysql.php";
 require_once "login.php";
-$result = DBC::query(sprintf(
+DBC::query(sprintf(
     "INSERT INTO `psqueue`(`id`,`user`,`name`) VALUES ('','%s','%s')",
     mysqli_real_escape_string(DBC::get(),$_GET['user']),
     mysqli_real_escape_string(DBC::get(),$_GET['event'])
 ));
-echo 0;
-flog("push.php stopped");
-exit;
+got(0);
 ?>

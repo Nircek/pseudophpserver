@@ -37,13 +37,7 @@ $result = DBC::query(sprintf(
     "SELECT * FROM `pcqueue` WHERE `user`='%s'",
     mysqli_real_escape_string(DBC::get(),$_GET['user'])
 ));
-if(($result->num_rows)<1) {
-	echo -5;
-	flog("ERR: -5");
-	exit;
-}
-echo 0;
-echo $result->fetch_assoc()['text'];
-flog("refresh.php stopped");
-exit;
+if(($result->num_rows)<1)
+    got('-',5);
+got(0, $result->fetch_assoc()['text']);
 ?>

@@ -39,16 +39,6 @@ if(($result->num_rows)>0) {
 	$user = $r['user'];
 	$r = $r['name'];
 	$result = DBC::query("DELETE FROM `psqueue` ORDER BY `id` LIMIT 1 ");
-} else {
-	echo -5;
-	flog("ERR: -5");
-	exit;
-}
-echo 0;
-echo $user;
-echo "\xB2";
-echo $r;
-flog("pop.php stopped");
-exit;
-
+} else got('-', 5);
+got(0, $user, $r);
 ?>
