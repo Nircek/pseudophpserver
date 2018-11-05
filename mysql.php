@@ -46,7 +46,11 @@ class DBC {
       }
       self::$instance->set_charset("utf8");
     }
-    //CREATE TABLE IF NOT EXISTS psqueue ( id MEDIUMINT NOT NULL AUTO_INCREMENT, name TEXT NOT NULL, user TEXT NOT NULL, PRIMARY KEY (id) ); CREATE TABLE IF NOT EXISTS users ( user TEXT NOT NULL, pass TEXT NOT NULL );
+    /*
+    CREATE TABLE IF NOT EXISTS psqueue ( id MEDIUMINT NOT NULL AUTO_INCREMENT, name TEXT NOT NULL, user TEXT NOT NULL, PRIMARY KEY (id) );
+    CREATE TABLE IF NOT EXISTS users ( user TEXT NOT NULL, pass TEXT NOT NULL );
+    CREATE TABLE IF NOT EXISTS vars ( user TEXT NOT NULL, name TEXT NOT NULL, value TEXT NOT NULL );
+    */
     return self::$instance;
   }
   public static function query($s) {
