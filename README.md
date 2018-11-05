@@ -27,8 +27,9 @@ We split PPS files into 3 groups:
 ## Replies
 To use some file you must do GET request for this file with parameters. Then in the response to this request, you get a reply.
 Reply starts with char, which defines a type.
+
 | type     | char |
-| -------- | ---- |
+|----------|------|
 | good     | `0`  |
 | error    | `-`  |
 | DB-error | `+`  |
@@ -36,8 +37,9 @@ Reply starts with char, which defines a type.
 Good type specifies the success of the request.
 DB-error type specifies a database error. Request of this type provides in parameters code of error and its description, what is an output of mysqli. You can get more info [here](http://php.net/manual/en/mysqli.connect-errno.php) and [here](http://php.net/manual/en/mysqli.errno.php).
 Error type specifies a PPS error. Request of this type provides in parameters code of error and/or its description. There're error codes in the table below.
+
 | code | description                          |
-| ---- | ------------------------------------ |
+|------|--------------------------------------|
 | 1    | Not enough parameters in the request |
 | 2    | User privileges denied               |
 | 3    | Admin privileges denied              |
