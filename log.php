@@ -2,7 +2,7 @@
 /*
 MIT License
 
-Copyright (c) 2017-2018 Nircek
+Copyright (c) 2017-2019 Nircek
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -29,6 +29,7 @@ SOFTWARE.
   Auth:   -- / admin
   Desc:   save info in log
 -------------------------------------*/
+header('content-type:text/plain;charset=utf-8');
 function flog($log) {
 	$endl="\r\n";
 	$fp = fopen('log.txt','a') or got(-4,'','',false);
@@ -43,7 +44,7 @@ function got($type='?', $code='', $desc='', $log=true) {
         $f = $type;
         $f .= $code;
         if($desc)
-            $f .= "\xB2".$desc;
+            $f .= "\xE2\x90\x9F".$desc; // ␟ U+241F "Symbol For Unit Separator"
     }
     echo $f."\r\n";
     if(!$log)
