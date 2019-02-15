@@ -34,7 +34,7 @@ require_once "login.php";
 require_once "mysql.php";
 $result = DBC::query(sprintf(
     "SELECT * FROM `pcqueue` WHERE `user`='%s'",
-    mysqli_real_escape_string(DBC::get(),$_GET['user'])
+    mysqli_real_escape_string(DBC::get(),$_REQUEST['user'])
 ));
 if(($result->num_rows)<1)
     got(-5);

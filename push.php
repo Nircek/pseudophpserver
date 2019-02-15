@@ -30,14 +30,14 @@ SOFTWARE.
   Desc:   push event to event queue
 -------------------------------------*/
 require_once "log.php";
-if(!isset($_GET['event']))
+if(!isset($_REQUEST['event']))
     got(-1);
 require_once "login.php";
 require_once "mysql.php";
 DBC::query(sprintf(
     "INSERT INTO `psqueue`(`id`,`user`,`name`) VALUES ('','%s','%s')",
-    mysqli_real_escape_string(DBC::get(),$_GET['user']),
-    mysqli_real_escape_string(DBC::get(),$_GET['event'])
+    mysqli_real_escape_string(DBC::get(),$_REQUEST['user']),
+    mysqli_real_escape_string(DBC::get(),$_REQUEST['event'])
 ));
 got(0);
 ?>

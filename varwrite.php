@@ -30,27 +30,27 @@ SOFTWARE.
   Desc:   set var
 -------------------------------------*/
 require_once "log.php";
-if(!isset($_GET['name'],$_GET['user'],$_GET['value']))
+if(!isset($_REQUEST['name'],$_REQUEST['user'],$_REQUEST['value']))
     got(-1);
 require "admin.php";
 require_once "mysql.php";
 $result = DBC::query(sprintf(
     "SELECT * FROM vars WHERE `user`='%s' AND `name`='%s'",
-    mysqli_real_escape_string(DBC::get(),$_GET['user']),
-    mysqli_real_escape_string(DBC::get(),$_GET['name'])
+    mysqli_real_escape_string(DBC::get(),$_REQUEST['user']),
+    mysqli_real_escape_string(DBC::get(),$_REQUEST['name'])
 ));
 if($result->num_rows>0)
 	DBC::query(sprintf("UPDATE vars SET `value`='%s' WHERE `user`='%s' AND `name`='%s'",
-		mysqli_real_escape_string(DBC::get(),$_GET['value']),
-		mysqli_real_escape_string(DBC::get(),$_GET['user']),
-		mysqli_real_escape_string(DBC::get(),$_GET['name'])
+		mysqli_real_escape_string(DBC::get(),$_REQUEST['value']),
+		mysqli_real_escape_string(DBC::get(),$_REQUEST['user']),
+		mysqli_real_escape_string(DBC::get(),$_REQUEST['name'])
 	));
 else
 	DBC::query(sprintf(
 	    "INSERT INTO vars (`user`,`name`,`value`) VALUES('%s','%s','%s')",
-	    mysqli_real_escape_string(DBC::get(),$_GET['user']),
-	    mysqli_real_escape_string(DBC::get(),$_GET['name']),
-	    mysqli_real_escape_string(DBC::get(),$_GET['value'])
+	    mysqli_real_escape_string(DBC::get(),$_REQUEST['user']),
+	    mysqli_real_escape_string(DBC::get(),$_REQUEST['name']),
+	    mysqli_real_escape_string(DBC::get(),$_REQUEST['value'])
 	));
 got(0);
 ?>

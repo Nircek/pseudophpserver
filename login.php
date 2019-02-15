@@ -30,13 +30,13 @@ SOFTWARE.
   Desc:   check if user's login data is correct
 -------------------------------------*/
 require_once "log.php";
-if(!isset($_GET['user'],$_GET['pass']))
+if(!isset($_REQUEST['user'],$_REQUEST['pass']))
     got(-2, 'User denied');
 require_once "mysql.php";
 $result = DBC::query(sprintf(
     "SELECT * FROM `users` WHERE `user`='%s' AND `pass`='%s'",
-    mysqli_real_escape_string(DBC::get(),$_GET['user']),
-    mysqli_real_escape_string(DBC::get(),$_GET['pass'])
+    mysqli_real_escape_string(DBC::get(),$_REQUEST['user']),
+    mysqli_real_escape_string(DBC::get(),$_REQUEST['pass'])
 ));
 if($result->num_rows==0)
 	got(-2, 'User denied');

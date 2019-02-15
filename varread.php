@@ -30,14 +30,14 @@ SOFTWARE.
   Desc:   read var
 -------------------------------------*/
 require_once "log.php";
-if(!isset($_GET['name'],$_GET['user']))
+if(!isset($_REQUEST['name'],$_REQUEST['user']))
     got(-1);
 require "admin.php";
 require_once "mysql.php";
 $result = DBC::query(sprintf(
     "SELECT * FROM `vars` WHERE `user`='%s' AND `name`='%s'",
-    mysqli_real_escape_string(DBC::get(),$_GET['user']),
-    mysqli_real_escape_string(DBC::get(),$_GET['name'])
+    mysqli_real_escape_string(DBC::get(),$_REQUEST['user']),
+    mysqli_real_escape_string(DBC::get(),$_REQUEST['name'])
 ));
 if(($result->num_rows)<1)
     got(-5);

@@ -30,25 +30,25 @@ SOFTWARE.
   Desc:   reply to client
 -------------------------------------*/
 require_once "log.php";
-if(!isset($_GET['text'],$_GET['user']))
+if(!isset($_REQUEST['text'],$_REQUEST['user']))
     got(-1);
 require "admin.php";
 require_once "mysql.php";
 $result = DBC::query(sprintf(
     "SELECT * FROM pcqueue WHERE `user`='%s'",
-    mysqli_real_escape_string(DBC::get(),$_GET['user'])
+    mysqli_real_escape_string(DBC::get(),$_REQUEST['user'])
 ));
 if($result->num_rows>0)
 	DBC::query(sprintf(
 	    "UPDATE pcqueue SET `text`='%s' WHERE `user`='%s'",
-		mysqli_real_escape_string(DBC::get(),$_GET['text']),
-		mysqli_real_escape_string(DBC::get(),$_GET['user'])
+		mysqli_real_escape_string(DBC::get(),$_REQUEST['text']),
+		mysqli_real_escape_string(DBC::get(),$_REQUEST['user'])
 	));
 else
 	DBC::query(sprintf(
 	    "INSERT INTO pcqueue (`user`,`text`) VALUES('%s','%s')",
-	    mysqli_real_escape_string(DBC::get(),$_GET['user']),
-	    mysqli_real_escape_string(DBC::get(),$_GET['text'])
+	    mysqli_real_escape_string(DBC::get(),$_REQUEST['user']),
+	    mysqli_real_escape_string(DBC::get(),$_REQUEST['text'])
 	));
 got(0);
 ?>

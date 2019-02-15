@@ -65,10 +65,10 @@ function got($type='?', $code='', $desc='', $log=true) {
 }
 //src: https://stackoverflow.com/a/12999758
 if(basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"])) {
-	if(!isset($_GET['log']))
+	if(!isset($_REQUEST['log']))
 	    got(-1);
 	require_once "admin.php";
-	flog($_GET['log']);
+	flog($_REQUEST['log']);
 	got(0);
 }
 ?>
